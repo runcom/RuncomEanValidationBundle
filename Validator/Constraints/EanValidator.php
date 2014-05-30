@@ -24,11 +24,11 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Class Ean13Validator
+ * Class EanValidator
  *
  * @package Runcom\EanValidationBundle\Validator\Constraint
  */
-class Ean13Validator extends ConstraintValidator
+class EanValidator extends ConstraintValidator
 {
     /**
      * @param mixed $value
@@ -38,7 +38,8 @@ class Ean13Validator extends ConstraintValidator
     {
         $checkDigit = substr((string) $value, strlen((string) $value) - 1, strlen((string) $value));
 
-        if (!preg_match('/^[0-9]{13}$/', $value, $matches) || $this->getEan13CheckDigit($value) != $checkDigit) {
+        if ((!preg_match('/^[0-9]{8,13}$/', $value, $matches)
+                || $this->getEanCheckDigit($value) != $checkDigit)) {
             $this->context->addViolation(
                 $constraint->message,
                 array('%string%' => $value)
@@ -50,17 +51,17 @@ class Ean13Validator extends ConstraintValidator
      * @param $value
      * @return float
      */
-    private function getEan13CheckDigit($value)
+    private function getEanCheckDigit($value)
     {
         $evenSum = 0;
         $oddSum = 0;
-        $digits = str_split( substr((string) $value, 0, -1) );
+        $digits = str_split(substr((string) $value, 0, -1));
 
         foreach ($digits as $index => $digit) {
             if ($index & 1) {
-                $evenSum += $digit * 3;
+                $evenSum += strlen((string) $value) == 8 ? $digit : $digit * 3;
             } else {
-                $oddSum += $digit;
+                $oddSum += strlen((string) $value) == 8 ? $digit * 3 : $digit;
             }
         }
 

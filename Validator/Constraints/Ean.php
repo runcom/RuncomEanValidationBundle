@@ -23,13 +23,13 @@ namespace Runcom\EanValidationBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Class Ean13
+ * Class Ean
  *
  * @Annotation
  *
  * @package Runcom\EanValidationBundle\Validator\Constraint
  */
-class Ean13 extends Constraint
+class Ean extends Constraint
 {
-    public $message = 'The string "%string%" is not a valid EAN13 code.';
+    public $message = 'The string "%string%" is not a valid EAN code.';
 }
