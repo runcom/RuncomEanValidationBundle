@@ -20,15 +20,15 @@
 
 namespace Runcom\EanValidationBundle\Tests\Validator\Constraints;
 
-use Runcom\EanValidationBundle\Validator\Constraints\Ean8;
-use Runcom\EanValidationBundle\Validator\Constraints\Ean8Validator;
+use Runcom\EanValidationBundle\Validator\Constraints\Ean;
+use Runcom\EanValidationBundle\Validator\Constraints\EanValidator;
 
 /**
- * Class Ean13ValidatorTest
+ * Class EanValidatorTest
  *
  * @package Runcom\EanValidationBundle\Tests\Validator\Constraints
  */
-class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
+class EanValidatorTest extends \PHPUnit_Framework_TestCase
 {
     protected $context;
     protected $validator;
@@ -36,7 +36,7 @@ class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', array(), array(), '', false);
-        $this->validator = new Ean8Validator();
+        $this->validator = new EanValidator();
         $this->validator->initialize($this->context);
     }
 
@@ -54,7 +54,7 @@ class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->context->expects($this->never())
             ->method('addViolation');
 
-        $this->validator->validate($data, new Ean8());
+        $this->validator->validate($data, new Ean());
     }
 
     /**
@@ -62,7 +62,7 @@ class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidValues($data)
     {
-        $constraint = new Ean8(array(
+        $constraint = new Ean(array(
             'message' => 'myMessage'
         ));
 
@@ -76,6 +76,9 @@ class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
     public function getValidValues()
     {
         return array(
+            array('2412345678901'),
+            array('1234567890128'),
+            array('5012345678900'),
             array('65833254'),
             array('96385074'),
             array('54490109'),
@@ -88,6 +91,8 @@ class Ean8ValidatorTest extends \PHPUnit_Framework_TestCase
             array(0),
             array(0.0),
             array(1234),
+            array(5012345678901),
+            array('2412345678903'),
             array(65833253),
             array('96385077'),
             array(null),
