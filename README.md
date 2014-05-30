@@ -6,7 +6,7 @@ This bundle provides validation constraints for EAN8 and EAN13 with annotations.
 
 ```json
 {
-    "require" {
+    "require": {
         "runcom/ean-validation-bundle": "~0.1"
     }
 }
