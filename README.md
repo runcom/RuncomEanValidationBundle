@@ -1,6 +1,3 @@
-RuncomEanValidationBundle  [![Build Status](https://api.travis-ci.org/runcom/RuncomEanValidationBundle.png)](https://travis-ci.org/runcom/RuncomEanValidationBundlee)
-
-[![Latest Stable Version](https://poser.pugx.org/runcom/RuncomEanValidationBundle/v/stable.png)](https://packagist.org/packages/runcom/RuncomEanValidationBundle) [![License](https://poser.pugx.org/runcom/RuncomEanValidationBundle/license.png)](https://packagist.org/packages/runcom/RuncomEanValidationBundle)
-
+RuncomEanValidationBundle [![Build Status](https://api.travis-ci.org/runcom/RuncomEanValidationBundle.png)](https://travis-ci.org/runcom/RuncomEanValidationBundlee) [![Latest Stable Version](https://poser.pugx.org/runcom/ean-validation-bundle/v/stable.svg)](https://packagist.org/packages/runcom/ean-validation-bundle) [![Total Downloads](https://poser.pugx.org/runcom/ean-validation-bundle/downloads.svg)](https://packagist.org/packages/runcom/ean-validation-bundle) [![Latest Unstable Version](https://poser.pugx.org/runcom/ean-validation-bundle/v/unstable.svg)](https://packagist.org/packages/runcom/ean-validation-bundle) [![License](https://poser.pugx.org/runcom/ean-validation-bundle/license.svg)](https://packagist.org/packages/runcom/ean-validation-bundle)
 =====================
 This bundle provides validation constraints for EAN8 and EAN13 with annotations.
