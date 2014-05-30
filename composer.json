@@ -8,6 +8,7 @@
     "autoload": {
         "psr-0": { "Runcom\\EanValidationBundle": "" }
     },
+    "target-dir": "Runcom/EanValidationBundle",
     "require": {
         "php": ">=5.3.3",
         "symfony/validator": "~2.3",
