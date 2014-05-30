@@ -10,8 +10,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/validator": "~2.3",
-        "symfony/http-kernel": "~2.3"
+        "symfony/framework-bundle": "~2.3"
     },
     "require-dev": {
         "phpunit/phpunit": "@stable"
