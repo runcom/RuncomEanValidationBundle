@@ -1,0 +1,26 @@
+{
+    "name": "runcom/ean-validation-bundle",
+    "description": "Validator for the International Article Number (EAN)",
+    "keywords": ["barcode", "ean", "ean13", "ean8"],
+    "homepage": "https://github.com/runcom/RuncomEanValidationBundle",
+    "type": "symfony-bundle",
+    "license": "GPL-3.0+",
+    "autoload": {
+        "psr-0": { "Runcom\\EanValidationBundle": "" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/validator": "~2.3",
+        "symfony/http-kernel": "~2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "authors": [
+        {
+            "name": "Antonio Murdaca",
+            "email": "me@runcom.ninja"
+        }
+    ],
+    "minimum-stability": "stable"
+}
