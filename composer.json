@@ -6,12 +6,11 @@
     "type": "symfony-bundle",
     "license": "GPL-3.0+",
     "autoload": {
-        "psr-4": { "Runcom\\EanValidationBundle": "" },
+        "psr-4": { "Runcom\\EanValidationBundle\\": "" },
         "exclude-from-classmap": [
             "Tests/"
         ]
-    },    
-    "target-dir": "Runcom/EanValidationBundle",
+    },
     "require": {
         "php": ">=5.3.3",
         "symfony/validator": "~2.3|~3.0",
